@@ -30,6 +30,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/a", (req, res) => {
+  res.send("Hello a!");
+});
+
 route(app);
 
 app.listen(port, () => {
