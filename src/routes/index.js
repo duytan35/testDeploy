@@ -1,5 +1,6 @@
 // const authRouter = require("./auth");
 // const userRouter = require("./users");
+const usersService = require("../services/users");
 
 const route = (app) => {
   // app.use("/auth", authRouter);
@@ -14,6 +15,11 @@ const route = (app) => {
 
   app.post("/", (req, res) => {
     res.send("you send post?");
+  });
+
+  app.get("/user", async (req, res) => {
+    const user = await usersService.getUserById(1);
+    res.send({ message: "user", data: user });
   });
 };
 
