@@ -14,9 +14,7 @@ app.post("/", (req, res) => {
   res.send("you send post?");
 });
 
-const port = process.env.PORT || 8080;
-
-app.listen(port, (err, res) => {
+app.listen(process.env.PORT, (err, res) => {
   if (err) {
     console.log(err);
     return res.status(500).send(err.message);
