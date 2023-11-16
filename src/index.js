@@ -1,18 +1,8 @@
 const express = require("express");
 
 const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Express JS on Vercel");
-});
-
-app.get("/ping", (req, res) => {
-  res.send("pong 🏓");
-});
-
-app.post("/", (req, res) => {
-  res.send("you send post?");
-});
+const route = require("./routes");
+route(app);
 
 app.listen(process.env.PORT, (err, res) => {
   if (err) {
